@@ -131,7 +131,7 @@ public  function _clear_db(){
 	}
 		public  function _add_manufacturer($new){
 		$errors=array();
-		if($res=$this->manufacturer->insert(array('manufacturer' => $new))){
+		if($res=$this->db->manufacturer->insert(array('manufacturer' => $new))){
 			
 		}
 		else{
@@ -141,7 +141,7 @@ public  function _clear_db(){
 	}
 	public  function _add_OS($new){
 		$errors=array();
-		if($res=$this->OS->insert(array('OS' => $new))){
+		if($res=$this->db->OS->insert(array('OS' => $new))){
 			
 		}
 		else{

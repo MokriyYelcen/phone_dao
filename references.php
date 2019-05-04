@@ -1,6 +1,8 @@
 <?php
-include ('phone.php');
-include ('view.php');
+include ('model\phone.php');
+include ('model\DataMigration.php');
+include ('view\TableView.php');
+include ('view\DataMigrationView.php');
 include ('dao\enum.php');
 include ('dao\IMyDAO.php');
 include ('dao\MongoDBDAO.php');

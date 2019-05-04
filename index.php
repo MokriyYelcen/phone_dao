@@ -1,7 +1,7 @@
 <?php
 
 require ('references.php');//инклюды
-$dao= DAOFactory::get_obj_DAO(DAOenum:: MySQLDBDAO);//create dao object, operation with db
+$dao= DAOFactory::get_obj_DAO(DAOenum:: MySQLDAO);//create dao object, operation with db
 $errors=array();
 
 	if('POST'==$_SERVER['REQUEST_METHOD']){//server config

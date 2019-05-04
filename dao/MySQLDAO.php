@@ -179,21 +179,25 @@ class MySQLDAO implements IMyDao{//interface
 			$errors['connection']='can`t connect mysql';
 		}
 	}
-	public function _clear_db(){
+	
+
+public function _clear_db(){
 		$errors=array();
 		if($this->connection){
-			$delman=mysqli_query($this->connection,"DELETE FROM `manufecturers` WHERE `id_manufacturer` IS NOT NULL";
-			$delOS=mysqli_query($this->connection,"DELETE FROM `OS` WHERE `id_OS` IS NOT NULL";
-			if($delman&&$delOS){
-				if(mysqli_query($this->connection,"DELETE FROM `mobile_phones` WHERE `id_phone` IS NOT NULL")){
+			$delpho=mysqli_query($this->connection,"DELETE FROM `mobile_phones` WHERE `id_phone` IS NOT NULL");
+			
+			if($delpho){
+				$delman=mysqli_query($this->connection,"DELETE FROM `manufecturers` WHERE `id_manufacturer` IS NOT NULL");
+				$delOS=mysqli_query($this->connection,"DELETE FROM `OS` WHERE `id_OS` IS NOT NULL");
+				if($delman&&$delOS){
 				
 				}
 				else{
-					$errors['delete']='can`t delete all from mobile_phones';
+					$errors['delete']='can`t delete all from manufecturers OS';
 				}
 			}
 			else{
-					$errors['delete']='can`t delete all from OS manufecturers';
+					$errors['delete']='can`t delete all from phone';
 				}
 			
 		}
@@ -203,6 +207,9 @@ class MySQLDAO implements IMyDao{//interface
 		}
 		return $errors;
 	}
+
+
+
 	public  function _add_manufacturer($new){
 		$errors=array();
 		if($this->connection){
